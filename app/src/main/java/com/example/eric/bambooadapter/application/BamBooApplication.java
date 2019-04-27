@@ -29,10 +29,10 @@ public class BamBooApplication extends Application {
     private void initObjectBox() {
         //第一次没运行之前，MyObjectBox默认会有报错提示，可以忽略。创建实体类， make之后报错就会不提示
         boxStore = MyObjectBox.builder().androidContext(this).build();
-        if (BuildConfig.DEBUG) {//开启浏览器访问ObjectBox
-            boolean started = new AndroidObjectBrowser(boxStore).start(this);
-            Log.i("ObjectBrowser", "Started: " + started);
-        }
+        //        if (BuildConfig.DEBUG) {//开启浏览器访问ObjectBox
+        boolean started = new AndroidObjectBrowser(boxStore).start(this);
+        Log.i("ObjectBrowser", "Started: " + started);
+        //        }
         DataManager.getInstance().init(this);//数据库统一操作管理类初始化
     }
 

@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">BamBooAdapter</string>
+    <string name="app_name">私记</string>
+
+    <string name="text_diary">日记</string>
+    <string name="text_mine">我的</string>
+
+
+    <!--转场动画name-->
+    <string name="trans_diary_pic">diary_pic</string>
 </resources>

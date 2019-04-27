@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="design_bottom_navigation_text_size" tools:overrode="true">10sp</dimen>
+    <dimen name="design_bottom_navigation_active_text_size" tools:overrode="true">12sp</dimen>
+
+    <dimen name="design_bottom_navigation_margin" tools:overrode="true">18dp</dimen>
+    <!--<dimen name="fixed_height_bottom_padding" tools:overrode="true">8dp</dimen>//反向参数，值越大，距离越小-->
+    <!--<dimen name="fixed_height_top_padding_inactive">-3dp</dimen>//没看懂，但是跟高度有关，正数会变宽-->
+</resources>

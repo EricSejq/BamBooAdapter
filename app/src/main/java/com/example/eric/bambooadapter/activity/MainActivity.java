@@ -2,7 +2,6 @@ package com.example.eric.bambooadapter.activity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 
 import com.example.eric.bambooadapter.R;
 import com.example.eric.bambooadapter.bambooadapter.BambooAdapter;
@@ -15,7 +14,7 @@ import java.util.List;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.example.eric.bambooadapter.*;
 /**
  * Description:
  * Data：2019/4/24-21:49

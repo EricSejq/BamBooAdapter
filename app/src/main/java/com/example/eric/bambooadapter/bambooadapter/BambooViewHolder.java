@@ -2,6 +2,10 @@ package com.example.eric.bambooadapter.bambooadapter;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.eric.bambooadapter.utils.GlideUtil;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
@@ -49,6 +53,19 @@ public class BambooViewHolder extends RecyclerView.ViewHolder {
         return this;
     }
 
+    public BambooViewHolder setTextViewText(@IdRes int id, String content) {
+        ((TextView) itemView.findViewById(id)).setText(content);
+        return this;
+    }
+
+    public BambooViewHolder setImageViewPic(@IdRes int id, int resId) {
+        ((ImageView) itemView.findViewById(id)).setImageResource(resId);
+        return this;
+    }
+
+    public View getView(@IdRes int viewId) {
+        return itemView.findViewById(viewId);
+    }
 
     public interface OnItemClickListener {
         /**

@@ -10,6 +10,8 @@ import com.example.eric.bambooadapter.activity.DiaryDetailActivity;
 import com.example.eric.bambooadapter.bambooadapter.BambooAdapter;
 import com.example.eric.bambooadapter.bambooadapter.BambooViewHolder;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.example.eric.bambooadapter.utils.StringUtils;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +53,7 @@ public class DiaryFragment extends BaseFragment {
     protected void initView(View view) {
         diary_rv = view.findViewById(R.id.diary_rv);
         refresh_srl = view.findViewById(R.id.refresh_srl);
-        
+
     }
 
     @Override
@@ -71,7 +73,7 @@ public class DiaryFragment extends BaseFragment {
                                 bambooViewHolder
                                         .setTextViewText(R.id.diary_item_title, data)
                                         .setImageViewPic(R.id.diary_item_pic, R.drawable.pikaqiu)
-                                        .setTextViewText(R.id.diary_item_time, "2019-1-1 4-27")
+                                        .setTextViewText(R.id.diary_item_time, StringUtils.getDateString(System.currentTimeMillis()))
                                         .addClickListener(R.id.diary_item_pic, view ->
                                                 DiaryDetailActivity
                                                         .startWithShareAnimation(getActivity(), data, (ImageView) bambooViewHolder.getView(R.id.diary_item_pic)));

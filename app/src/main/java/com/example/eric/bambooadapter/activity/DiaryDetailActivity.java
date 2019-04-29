@@ -64,8 +64,8 @@ public class DiaryDetailActivity extends BaseActivity {
     public static void startWithShareAnimation(Activity context, String diatyId, ImageView imageView) {
         Intent starter = new Intent(context, DiaryDetailActivity.class);
         starter.putExtra(Constant.DIARY_ID, diatyId);
-        context.startActivity(starter,
-                ActivityOptionsCompat.makeSceneTransitionAnimation(context, imageView, context.getString(R.string.trans_diary_pic)).toBundle());
+                context.startActivity(starter,
+                        ActivityOptionsCompat.makeSceneTransitionAnimation(context, imageView, context.getString(R.string.trans_diary_pic)).toBundle());
     }
 
 }

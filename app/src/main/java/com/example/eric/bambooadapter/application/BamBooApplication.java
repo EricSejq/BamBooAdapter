@@ -33,7 +33,7 @@ public class BamBooApplication extends Application {
         boolean started = new AndroidObjectBrowser(boxStore).start(this);
         Log.i("ObjectBrowser", "Started: " + started);
         //        }
-        DataManager.getInstance().init(this);//数据库统一操作管理类初始化
+        DataManager.getInstance().init(this);
     }
 
     public BoxStore getBoxStore() {

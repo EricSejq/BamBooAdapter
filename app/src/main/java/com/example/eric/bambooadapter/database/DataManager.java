@@ -2,6 +2,7 @@ package com.example.eric.bambooadapter.database;
 
 import com.example.eric.bambooadapter.application.BamBooApplication;
 import com.example.eric.bambooadapter.data.ClassBean;
+import com.example.eric.bambooadapter.data.DBBean.DiaryBean;
 import com.example.eric.bambooadapter.data.DBBean.TestBean;
 
 import io.objectbox.Box;
@@ -26,15 +27,18 @@ public class DataManager {
 
     public BoxStore boxStore;
     public Box<TestBean> userEntityBox;
+    public Box<DiaryBean> diaryEntityBox;
 
     public void init(BamBooApplication bamBooApplication) {
         boxStore = bamBooApplication.getBoxStore();
-        initUserEntityBox();
+        initEntityBox();
     }
 
-    private void initUserEntityBox() {
+    private void initEntityBox() {
         //对应操作对应表的类
         userEntityBox = boxStore.boxFor(TestBean.class);
+
+        diaryEntityBox = boxStore.boxFor(DiaryBean.class);
     }
 
 }

@@ -9,6 +9,7 @@ import com.example.eric.bambooadapter.R;
 import com.example.eric.bambooadapter.activity.DiaryDetailActivity;
 import com.example.eric.bambooadapter.bambooadapter.BambooAdapter;
 import com.example.eric.bambooadapter.bambooadapter.BambooViewHolder;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class DiaryFragment extends BaseFragment {
 
     private RecyclerView diary_rv;
+    private SmartRefreshLayout refresh_srl;
 
     public DiaryFragment() {
         // Required empty public constructor
@@ -48,6 +50,8 @@ public class DiaryFragment extends BaseFragment {
     @Override
     protected void initView(View view) {
         diary_rv = view.findViewById(R.id.diary_rv);
+        refresh_srl = view.findViewById(R.id.refresh_srl);
+        
     }
 
     @Override

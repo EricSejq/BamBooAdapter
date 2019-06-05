@@ -8,4 +8,5 @@ package com.example.eric.bambooadapter.constant;
  */
 public class Constant {
     public static final String DIARY_ID = "diary_id";
+    public static final String DIARY_DATA = "diary_data";
 }

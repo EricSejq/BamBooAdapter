@@ -22,7 +22,7 @@
     },
     {
       "id": "2:2382522058973734576",
-      "lastPropertyId": "4:8473943093429140927",
+      "lastPropertyId": "5:4785949882544352320",
       "name": "DiaryBean",
       "properties": [
         {
@@ -40,6 +40,10 @@
         {
           "id": "4:8473943093429140927",
           "name": "CREATETIME"
+        },
+        {
+          "id": "5:4785949882544352320",
+          "name": "DIARYTITLE"
         }
       ],
       "relations": []

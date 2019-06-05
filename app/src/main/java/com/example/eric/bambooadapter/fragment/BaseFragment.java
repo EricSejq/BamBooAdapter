@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import io.reactivex.disposables.Disposable;
 
 /**
  * Description:
@@ -17,6 +18,7 @@ import androidx.fragment.app.Fragment;
  */
 public abstract class BaseFragment extends Fragment {
 
+    protected Disposable mDisposable;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -28,12 +30,14 @@ public abstract class BaseFragment extends Fragment {
 
     /**
      * 获取布局视图
+     *
      * @return
      */
     protected abstract int getLayoutId();
 
     /**
      * 初始化控件
+     *
      * @param view
      */
     protected abstract void initView(View view);
@@ -42,4 +46,12 @@ public abstract class BaseFragment extends Fragment {
      * 初始化控件
      */
     protected abstract void initData();
+
+    @Override
+    public void onDestroyView() {
+        if(mDisposable != null){
+            mDisposable = null;
+        }
+        super.onDestroyView();
+    }
 }

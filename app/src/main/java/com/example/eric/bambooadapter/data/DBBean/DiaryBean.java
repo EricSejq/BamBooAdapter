@@ -1,5 +1,7 @@
 package com.example.eric.bambooadapter.data.DBBean;
 
+import java.io.Serializable;
+
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
 import io.objectbox.annotation.NameInDb;
@@ -11,7 +13,7 @@ import io.objectbox.annotation.NameInDb;
  * @author: eric
  */
 @Entity
-public class DiaryBean {
+public class DiaryBean implements Serializable {
     @Id()
     long id;
 
@@ -24,16 +26,37 @@ public class DiaryBean {
     @NameInDb("CREATETIME")
     long createTime;
 
-    public DiaryBean(long id, String userName, String diaryContent, long createTime) {
+    @NameInDb("DIARYTITLE")
+    String diarytitle;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getDiaryContent() {
+        return diaryContent;
+    }
+
+    public long getCreateTime() {
+        return createTime;
+    }
+
+    public String getDiarytitle() {
+        return diarytitle;
+    }
+
+    public DiaryBean(long id, String userName, String diaryContent, long createTime, String diarytitle) {
         this.id = id;
         this.userName = userName;
         this.diaryContent = diaryContent;
         this.createTime = createTime;
+        this.diarytitle = diarytitle;
     }
 
-    public DiaryBean(String userName, String diaryContent, long createTime) {
+    public DiaryBean(String userName, String diaryContent, long createTime, String diarytitle) {
         this.userName = userName;
         this.diaryContent = diaryContent;
         this.createTime = createTime;
+        this.diarytitle = diarytitle;
     }
 }

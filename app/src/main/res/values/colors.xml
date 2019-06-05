@@ -7,4 +7,6 @@
     <color name="white">#fff</color>
     <color name="gray">#ccc</color>
     <color name="trans_gray">#56CCCCCC</color>
+    <color name="blue">#1ac1e7</color>
+    <color name="black">#000</color>
 </resources>

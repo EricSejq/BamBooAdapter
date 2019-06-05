@@ -3,14 +3,15 @@ package com.example.eric.bambooadapter.activity;
 
 import com.example.eric.bambooadapter.R;
 import com.example.eric.bambooadapter.application.BamBooApplication;
-import com.example.eric.bambooadapter.data.DBBean.TestBean;
+import com.example.eric.bambooadapter.data.DBBean.DiaryBean;
+import com.example.eric.bambooadapter.database.DataManager;
 import com.example.eric.bambooadapter.fragment.DiaryFragment;
 import com.example.eric.bambooadapter.fragment.FragmentFactory;
 import com.example.eric.bambooadapter.fragment.MineFragment;
+import com.example.eric.bambooadapter.fragment.TipsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.fragment.app.Fragment;
-import io.objectbox.Box;
 
 /**
  * @author eric
@@ -20,8 +21,8 @@ public class HomeActivity extends BaseActivity {
 
     private int mCurrentIndex = -1;
     public static final int INDEX_DIARY = 1;
+    public static final int INDEX_TIPS = 3;
     public static final int INDEX_MINE = 2;
-
     private BottomNavigationView.OnNavigationItemSelectedListener selectedListener = menuItem -> {
         if (menuItem != null) {
             onMenuSelect(menuItem.getItemId());
@@ -41,14 +42,12 @@ public class HomeActivity extends BaseActivity {
         main_bnv.setOnNavigationItemSelectedListener(selectedListener);
         chooseFragment(INDEX_DIARY);
 
-
     }
 
     @Override
     protected void initData() {
-//        Box<TestBean> testBeanBox = ((BamBooApplication) getApplication()).getBoxStore().boxFor(TestBean.class);
-//        testBeanBox
-//                .put(new TestBean("eric"));
+        //        DataManager.insertDiary(new DiaryBean("eric", "111111111111111111111", System.currentTimeMillis(), "标题1"));
+        //        DataManager.insertDiary(new DiaryBean("eric", "222222222222222222222", System.currentTimeMillis(), "标题2"));
     }
 
     private void onMenuSelect(int viewId) {
@@ -59,6 +58,9 @@ public class HomeActivity extends BaseActivity {
                 break;
             case R.id.menu_mine:
                 index = INDEX_MINE;
+                break;
+            case R.id.menu_tips:
+                index = INDEX_TIPS;
                 break;
             default:
                 break;
@@ -110,8 +112,11 @@ public class HomeActivity extends BaseActivity {
             return DiaryFragment.class.toString();
         } else if (index == INDEX_MINE) {
             return MineFragment.class.toString();
+        } else if (index == INDEX_TIPS) {
+            return TipsFragment.class.toString();
         } else {
             return "";
         }
     }
+
 }

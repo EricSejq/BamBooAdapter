@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".activity.HomeActivity"
             android:launchMode="singleTask">
@@ -26,7 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.DiaryDetailActivity"></activity>
+        <activity android:name=".activity.DiaryDetailActivity" />
+        <activity android:name=".activity.OperateDiaryActivity"></activity>
     </application>
 
 </manifest>

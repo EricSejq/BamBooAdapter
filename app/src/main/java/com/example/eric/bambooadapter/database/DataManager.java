@@ -5,8 +5,14 @@ import com.example.eric.bambooadapter.data.ClassBean;
 import com.example.eric.bambooadapter.data.DBBean.DiaryBean;
 import com.example.eric.bambooadapter.data.DBBean.TestBean;
 
+import java.util.List;
+
 import io.objectbox.Box;
 import io.objectbox.BoxStore;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
 
 /**
  * Description:
@@ -39,6 +45,31 @@ public class DataManager {
         userEntityBox = boxStore.boxFor(TestBean.class);
 
         diaryEntityBox = boxStore.boxFor(DiaryBean.class);
+
+
+    }
+
+    public static Observable<Box<DiaryBean>> getDiary() {
+        isNull();
+        return Observable.create(emitter ->
+                emitter.onNext(dataManager.diaryEntityBox)
+        );
+    }
+
+    public static void insertDiary(DiaryBean data) {
+        isNull();
+        dataManager.diaryEntityBox.put(data);
+    }
+
+    public static void insertDiarys(List<DiaryBean> datas) {
+        isNull();
+        dataManager.diaryEntityBox.put(datas);
+    }
+
+    public static void isNull() {
+        if (dataManager == null) {
+            throw new NullPointerException("dataManager is null");
+        }
     }
 
 }

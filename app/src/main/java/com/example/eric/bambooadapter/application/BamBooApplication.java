@@ -31,7 +31,6 @@ public class BamBooApplication extends Application {
         boxStore = MyObjectBox.builder().androidContext(this).build();
         //        if (BuildConfig.DEBUG) {//开启浏览器访问ObjectBox
         boolean started = new AndroidObjectBrowser(boxStore).start(this);
-        Log.i("ObjectBrowser", "Started: " + started);
         //        }
         DataManager.getInstance().init(this);
     }

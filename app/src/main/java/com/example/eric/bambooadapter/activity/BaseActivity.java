@@ -1,12 +1,10 @@
 package com.example.eric.bambooadapter.activity;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.transition.Slide;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 
 import com.example.eric.bambooadapter.R;
 
@@ -67,9 +65,9 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
      * 设置status透明
      */
     private void setStatusTrans() {
-//        getWindow().setFlags(
-//                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
-//                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        //        getWindow().setFlags(
+        //                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+        //                WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
         getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
         // 设置文字是否黑色

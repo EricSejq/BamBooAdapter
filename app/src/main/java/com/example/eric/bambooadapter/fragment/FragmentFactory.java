@@ -10,11 +10,13 @@ import androidx.fragment.app.Fragment;
  */
 public class FragmentFactory {
     public static Fragment create(String fragmentTag) {
-        if(fragmentTag.equals(DiaryFragment.class.toString())){
+        if (fragmentTag.equals(DiaryFragment.class.toString())) {
             return DiaryFragment.newInstance();
-        }else if(fragmentTag.equals(MineFragment.class.toString())){
+        } else if (fragmentTag.equals(MineFragment.class.toString())) {
             return MineFragment.newInstance();
-        }else{
+        } else if (fragmentTag.equals(TipsFragment.class.toString())) {
+            return TipsFragment.newInstance();
+        } else {
             return null;
         }
     }

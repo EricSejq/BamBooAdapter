@@ -138,6 +138,11 @@ public class BambooAdapter<T> extends RecyclerView.Adapter<BambooViewHolder> {
         return this;
     }
 
+    public BambooAdapter addDecoration(RecyclerView recyclerView, RecyclerView.ItemDecoration itemDecoration) {
+        recyclerView.addItemDecoration(itemDecoration);
+        return this;
+    }
+
     private BambooViewHolder.OnItemClickListener mItemClickListener;
 
 
